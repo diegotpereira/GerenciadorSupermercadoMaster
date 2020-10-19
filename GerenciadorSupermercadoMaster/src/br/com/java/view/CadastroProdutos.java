@@ -20,9 +20,10 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
-
+import br.com.java.dao.ProdutoDAO;
 import br.com.java.model.Pagamento;
 import br.com.java.model.Produtos;
+
 
 
 
@@ -30,15 +31,23 @@ public class CadastroProdutos extends javax.swing.JFrame{
 	
 	ArrayList<Produtos> lista = new ArrayList<>();
 	
-	 public CadastroProdutos(ArrayList list) {
-	        inicializarComponentes();
-	        //this.lista = list;
-	        //preencheLista();
-	        
-	    }
+	public CadastroProdutos(ArrayList list) {
+        //initComponents();
+        this.lista = list;
+        //preencheLista();
+        
+    }
+	
+	private static final long serialVersionUID = 1L;
+	protected static final int ERROR_MESSAGE = 0;
+	private JPanel contentPane;
+	private JTextField txtCodigo;
+	private JTextField txtDescricao;
+	private JTextField txtValor;
+	private JComboBox<String> cmbBox;
+	MaskFormatter mcodigo;
 
-	private void inicializarComponentes() {
-		// TODO Auto-generated method stub
+	public CadastroProdutos(String caminho,JFrame TCaixa) {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setTitle("Cadastro Produtos");
 		setBounds(100, 100, 544, 430);
@@ -94,7 +103,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 									"Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
 									ERROR_MESSAGE);
 						} else {
-							Produtos p = new Produtos();
+							ProdutoDAO p = new ProdutoDAO();
 							boolean aux;
 							aux = p.salvar(txtCodigo.getText(), txtDescricao.getText(), (String) cmbBox.getSelectedItem(),
 									txtValor.getText(), caminho);
@@ -106,7 +115,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 							}
 						}
 					} else {
-						Produtos p = new Produtos();
+						ProdutoDAO p = new ProdutoDAO();
 						boolean aux;
 						aux = p.alterar(caminho, txtCodigo.getText(), txtDescricao.getText(),
 								(String) cmbBox.getSelectedItem(), txtValor.getText());
@@ -156,7 +165,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 									"Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
 									ERROR_MESSAGE);
 						} else {
-							Produto p = new Produto();
+							ProdutoDAO p = new ProdutoDAO();
 							boolean aux;
 							aux = p.salvar(txtCodigo.getText(), txtDescricao.getText(), (String) cmbBox.getSelectedItem(),
 									txtValor.getText(), caminho);
@@ -168,7 +177,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 							}
 						}
 					} else {
-						Produto p = new Produto();
+						ProdutoDAO p = new ProdutoDAO();
 						boolean aux;
 						aux = p.alterar(caminho, txtCodigo.getText(), txtDescricao.getText(),
 								(String) cmbBox.getSelectedItem(), txtValor.getText());
@@ -201,7 +210,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 								"Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
 								ERROR_MESSAGE);
 					} else {
-						Produto p = new Produto();
+						ProdutoDAO p = new ProdutoDAO();
 						boolean aux;
 						aux = p.salvar(txtCodigo.getText(), txtDescricao.getText(), (String) cmbBox.getSelectedItem(),
 								txtValor.getText(), caminho);
@@ -213,7 +222,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 						}
 					}
 				} else {
-					Produto p = new Produto();
+					ProdutoDAO p = new ProdutoDAO();
 					boolean aux;
 					aux = p.alterar(caminho, txtCodigo.getText(), txtDescricao.getText(),
 							(String) cmbBox.getSelectedItem(), txtValor.getText());
@@ -235,8 +244,9 @@ public class CadastroProdutos extends javax.swing.JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 				String codigoProcurado = JOptionPane.showInputDialog(null,
 						"Digite código do produto a ser localizado :");
-				Produto p = new Produto();
-				if (p.localizar(codigoProcurado, caminho)) {
+				ProdutoDAO l = new ProdutoDAO();
+				Produtos p = new Produtos();
+				if (l.localizar(codigoProcurado, caminho)) {
 					txtDescricao.setText(p.getDescricao());
 					txtCodigo.setText(p.getCodigo());
 					txtValor.setText(p.getValor());
@@ -254,7 +264,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 // ******************************************************************************************
 				if (!txtCodigo.getText().isEmpty()) {
-					Produto p = new Produto();
+					ProdutoDAO p = new ProdutoDAO();
 					boolean aux;
 					aux = p.alterar(caminho, txtCodigo.getText(), txtDescricao.getText(),
 							(String) cmbBox.getSelectedItem(), txtValor.getText());
@@ -267,8 +277,9 @@ public class CadastroProdutos extends javax.swing.JFrame{
 				} else {
 					String codigoProcurado = JOptionPane.showInputDialog(null,
 							"Digite código do produto a ser localizado :");
-					Produto p = new Produto();
-					if (p.localizar(codigoProcurado, caminho)) {
+					ProdutoDAO l = new ProdutoDAO();
+					Produtos p = new Produtos();
+					if (l.localizar(codigoProcurado, caminho)) {
 						txtDescricao.setText(p.getDescricao());
 						txtCodigo.setText(p.getCodigo());
 						txtValor.setText(p.getValor());
@@ -290,7 +301,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 				if (txtCodigo.getText().isEmpty()) {
 					String codigoProcurado = JOptionPane.showInputDialog(null,
 							"Digite código do produto a ser excluido :");
-					Produto p = new Produto();
+					ProdutoDAO p = new ProdutoDAO();
 					int aux;
 					aux = p.excluir(codigoProcurado, caminho);
 					if (aux < Integer.parseInt(codigoProcurado)) {
@@ -301,7 +312,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 						limparTela();
 					}
 				} else {
-					Produto p = new Produto();
+					ProdutoDAO p = new ProdutoDAO();
 					int aux;
 					aux = p.excluir(txtCodigo.getText(), caminho);
 					if (aux < Integer.parseInt(txtCodigo.getText())) {
@@ -336,11 +347,14 @@ public class CadastroProdutos extends javax.swing.JFrame{
 		btnLimpar.setBounds(259, 229, 106, 44);
 		panel.add(btnLimpar);
 	}
-	private JPanel contentPane;
-	private JTextField txtCodigo;
-	private JTextField txtDescricao;
-	private JTextField txtValor;
-	private JComboBox<String> cmbBox;
-	MaskFormatter mcodigo;
+	
+	
+
+	public void limparTela() {
+		txtCodigo.setText("");
+		txtDescricao.setText("");
+		cmbBox.setSelectedItem(-1);
+		txtValor.setText("");
+	}
 
 }
