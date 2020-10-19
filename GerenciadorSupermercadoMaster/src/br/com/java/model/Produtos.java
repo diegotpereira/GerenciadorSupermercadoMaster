@@ -2,19 +2,14 @@ package br.com.java.model;
 
 public class Produtos {
 	
-	private String codigo;
-	private String descricao;
-	private String medida;
-	private String valor;
+	public String codigo;
+	public String descricao;
+	public String medida;
+	public String valor;
 	
-	public Produtos(String codigo, String descricao, String medida, String valor) {
-		super();
-		this.codigo = codigo;
-		this.descricao = descricao;
-		this.medida = medida;
-		this.valor = valor;
-	}
-
+	public Produtos() {}
+	
+	
 	public String getCodigo() {
 		return codigo;
 	}
@@ -46,4 +41,5 @@ public class Produtos {
 	public void setValor(String valor) {
 		this.valor = valor;
 	}
+	
 }
