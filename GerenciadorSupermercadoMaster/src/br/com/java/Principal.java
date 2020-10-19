@@ -1,6 +1,7 @@
 package br.com.java;
 
 import br.com.java.model.Usuario;
+import br.com.java.view.Login;
 
 public class Principal extends Usuario{
 
