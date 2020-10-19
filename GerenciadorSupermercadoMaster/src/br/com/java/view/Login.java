@@ -140,10 +140,10 @@ public class Login extends javax.swing.JFrame {
             if(condicao == 1 ){
             for(int j = 0;j < contasComuns.size();j++){
             if((contasComuns.get(j).nome.equals(nome)==true) && (contasComuns.get(j).cpf.equals(cpf)) ){
-//                 TelaCompra t = new TelaCompra(lista, contasComuns.get(j));
-//                 limparCampos();
-//                 t.setVisible(true);
-//                 condicao = 0;
+            	TelaCaixa t = new TelaCaixa(lista, contasComuns.get(j));
+                 limparCampos();
+                 t.setVisible(true);
+                 condicao = 0;
                 break;
             }
             }
