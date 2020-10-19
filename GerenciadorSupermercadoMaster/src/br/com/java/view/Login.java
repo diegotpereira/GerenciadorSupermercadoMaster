@@ -128,7 +128,7 @@ public class Login extends javax.swing.JFrame {
 
 	protected void JB_AcessarMouseClicked(MouseEvent evt) {
 		// TODO Auto-generated method stub
-String nome, cpf;
+        String nome, cpf;
         
         nome = this.Text_Nome.getText();
         cpf = this.Text_cpf.getText();
@@ -149,9 +149,9 @@ String nome, cpf;
             }
                 for(int z = 0;z < contasAdmin.size();z++){
                  if((contasAdmin.get(z).nome.equals(nome)==true) && (contasAdmin.get(z).cpf.equals(cpf))){
-//                    CadastroProdutos cp = new CadastroProdutos(lista);
-//                     limparCampos();
-//                     cp.setVisible(true);
+                     CadastroProdutos cp = new CadastroProdutos(lista);
+                     limparCampos();
+                     cp.setVisible(true);
                      condicao = 0;
                 break;
                 }
