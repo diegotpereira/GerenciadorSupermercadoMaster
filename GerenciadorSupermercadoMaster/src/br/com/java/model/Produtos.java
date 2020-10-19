@@ -2,22 +2,24 @@ package br.com.java.model;
 
 public class Produtos {
 	
-	public int codigo;
-    public String descricao;
-    public double preco;
-    
-	public Produtos(int codigo, String descricao, double preco) {
+	private String codigo;
+	private String descricao;
+	private String medida;
+	private String valor;
+	
+	public Produtos(String codigo, String descricao, String medida, String valor) {
 		super();
 		this.codigo = codigo;
 		this.descricao = descricao;
-		this.preco = preco;
+		this.medida = medida;
+		this.valor = valor;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 
@@ -29,11 +31,19 @@ public class Produtos {
 		this.descricao = descricao;
 	}
 
-	public double getPreco() {
-		return preco;
+	public String getMedida() {
+		return medida;
 	}
 
-	public void setPreco(double preco) {
-		this.preco = preco;
+	public void setMedida(String medida) {
+		this.medida = medida;
+	}
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
 	}
 }
