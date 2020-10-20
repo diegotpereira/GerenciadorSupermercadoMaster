@@ -10,9 +10,7 @@ import java.io.IOException;
 
 import br.com.java.model.Produtos;
 
-public class ProdutoDAO {
-	
-	private Produtos produtos;
+public class ProdutoDAO extends Produtos{
 	
 	public boolean salvar(String codigo, String telaDescricao, String medidaTela, String valorTela, String caminho) {
 		if (codigo.isEmpty()) {
