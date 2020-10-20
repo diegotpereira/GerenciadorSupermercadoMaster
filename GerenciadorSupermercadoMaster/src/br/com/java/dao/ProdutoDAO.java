@@ -12,7 +12,7 @@ import br.com.java.model.Produtos;
 
 public class ProdutoDAO {
 	
-	private Produtos produto;
+	private Produtos produtos;
 	
 	public boolean salvar(String codigo, String telaDescricao, String medidaTela, String valorTela, String caminho) {
 		if (codigo.isEmpty()) {
@@ -68,13 +68,13 @@ public class ProdutoDAO {
 			String linha = null;
 			while (br.ready()) {
 				linha = br.readLine();
-				String produto[] = linha.split("@");
-				if (produto[3].endsWith(codigoProcurado)) {
+				String produtos[] = linha.split("@");
+				if (produtos[3].endsWith(codigoProcurado)) {
 					String vetor[] = linha.split("@");
-//					produto.setDescricao(vetor[0]);
-//					setMedida(vetor[1]);
-//					setValor(vetor[2]);
-//					setCodigo(vetor[3]);
+					produtos.setDescricao(vetor[0]);
+					setMedida(vetor[1]);
+					setValor(vetor[2]);
+					setCodigo(vetor[3]);
 					aux++;
 				}
 			}
@@ -90,6 +90,21 @@ public class ProdutoDAO {
 			return true;
 		}
 	}
+	private void setCodigo(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setValor(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setMedida(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public boolean alterar(String caminho, String codigoTela, String descricaoTela, String medidaTela,
 			String valorTela) {
 		try {

@@ -27,16 +27,10 @@ import br.com.java.model.Produtos;
 
 
 
-public class CadastroProdutos extends javax.swing.JFrame{
+
+public class CadastroProdutos extends TelaCaixa{
 	
-	ArrayList<Produtos> lista = new ArrayList<>();
 	
-	public CadastroProdutos(ArrayList list) {
-        //initComponents();
-        this.lista = list;
-        //preencheLista();
-        
-    }
 	
 	private static final long serialVersionUID = 1L;
 	protected static final int ERROR_MESSAGE = 0;
@@ -47,7 +41,14 @@ public class CadastroProdutos extends javax.swing.JFrame{
 	private JComboBox<String> cmbBox;
 	MaskFormatter mcodigo;
 
-	public CadastroProdutos(String caminho,JFrame TCaixa) {
+	public void limparTela() {
+		txtCodigo.setText("");
+		txtDescricao.setText("");
+		cmbBox.setSelectedItem(-1);
+		txtValor.setText("");
+	}
+
+	public CadastroProdutos(String caminho,JFrame TelaCaixa) {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setTitle("Cadastro Produtos");
 		setBounds(100, 100, 544, 430);
@@ -329,7 +330,7 @@ public class CadastroProdutos extends javax.swing.JFrame{
 		JButton button = new JButton("Voltar para Caixa");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TCaixa.setVisible(true);
+				TelaCaixa.setVisible(true);
 				setVisible(false);
 			}
 		});
@@ -347,14 +348,8 @@ public class CadastroProdutos extends javax.swing.JFrame{
 		btnLimpar.setBounds(259, 229, 106, 44);
 		panel.add(btnLimpar);
 	}
-	
-	
 
-	public void limparTela() {
-		txtCodigo.setText("");
-		txtDescricao.setText("");
-		cmbBox.setSelectedItem(-1);
-		txtValor.setText("");
+	public CadastroProdutos(ArrayList<Produtos> lista) {
+		// TODO Auto-generated constructor stub
 	}
-
 }
