@@ -35,9 +35,9 @@ public class CadastroProdutos extends TelaCaixa{
 	private static final long serialVersionUID = 1L;
 	protected static final int ERROR_MESSAGE = 0;
 	private JPanel contentPane;
-	private JTextField txtCodigo;
-	private JTextField txtDescricao;
-	private JTextField txtValor;
+	public JTextField txtCodigo;
+	public JTextField txtDescricao;
+	public JTextField txtValor;
 	private JComboBox<String> cmbBox;
 	MaskFormatter mcodigo;
 
@@ -104,7 +104,7 @@ public class CadastroProdutos extends TelaCaixa{
 						boolean op = pay.verifica(txtDescricao.getText(), txtValor.getText()); // ************
 						if (descricao.isEmpty() || valor.isEmpty() || op == false) {
 							JOptionPane.showMessageDialog(null,
-									"Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
+									"1 - Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
 									ERROR_MESSAGE);
 						} else {
 							ProdutoDAO p = new ProdutoDAO();
@@ -166,7 +166,7 @@ public class CadastroProdutos extends TelaCaixa{
 						boolean op = pay.verifica(txtDescricao.getText(), txtValor.getText()); // ************
 						if (descricao.isEmpty() || valor.isEmpty() || op == false) {
 							JOptionPane.showMessageDialog(null,
-									"Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
+									"2 - Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
 									ERROR_MESSAGE);
 						} else {
 							ProdutoDAO p = new ProdutoDAO();
@@ -211,7 +211,7 @@ public class CadastroProdutos extends TelaCaixa{
 					boolean op = pay.verifica(txtDescricao.getText(), txtValor.getText()); 
 					if (descricao.isEmpty() || valor.isEmpty() || op == false) {
 						JOptionPane.showMessageDialog(null,
-								"Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
+								"3 - Preencha os campos 'Valor' , 'Descrição' e 'Medida' para efetuar o cadastro", null,
 								ERROR_MESSAGE);
 					} else {
 						ProdutoDAO p = new ProdutoDAO();

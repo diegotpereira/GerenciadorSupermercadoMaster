@@ -19,7 +19,7 @@ public class ProdutoDAO {
 			String descricao = telaDescricao;
 			String medida = medidaTela;
 			String valor = valorTela;
-			File f = new File("C:\\Users\\USER\\Desktop\\Cadastro\\cadastro.txt");
+			File f = new File("C:\\Users\\T.I\\Desktop\\Cadastro\\cadastro");
 			f.mkdirs();
 			File cadastro = new File(caminho);
 			try {
@@ -58,21 +58,21 @@ public class ProdutoDAO {
 		}
 		return compara;
 	}
+	
 	public boolean localizar(String codigoProcurado, String caminho) {
-		
 		int aux = 0;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(caminho));
 			String linha = null;
 			while (br.ready()) {
 				linha = br.readLine();
-				String produtos[] = linha.split("@");
-				if (produtos[3].endsWith(codigoProcurado)) {
+				String produto[] = linha.split("@");
+				if (produto[3].endsWith(codigoProcurado)) {
 					String vetor[] = linha.split("@");
-//					setDescricao(vetor[0]);
-//					setMedida(vetor[1]);
-//					setValor(vetor[2]);
-//					setCodigo(vetor[3]);
+					setDescricao(vetor[0]);
+					setMedida(vetor[1]);
+					setValor(vetor[2]);
+					setCodigo(vetor[3]);
 					aux++;
 				}
 			}
@@ -97,7 +97,7 @@ public class ProdutoDAO {
 			String descricao = descricaoTela;
 			String medida = medidaTela;
 			String valor = valorTela;
-			String temporario = "C:\\Users\\USER\\Desktop\\Cadastro\\temporario.txt";
+			String temporario = "C:\\Users\\T.I\\Desktop\\Cadastro\\temporario.txt";
 			File f = new File(temporario);
 			f.createNewFile();
 			BufferedReader brNovo = new BufferedReader(new FileReader(caminho));
@@ -127,7 +127,7 @@ public class ProdutoDAO {
 		}
 	}
 	public int excluir(String codigoProcurado, String caminho) {
-		String temporario = "C:\\Users\\USER\\Desktop\\Cadastro\\temporario.txt";
+		String temporario = "C:\\Users\\T.I\\Desktop\\Cadastro\\temporario.txt";
 		int aux = 0;
 		try {
 			File f = new File(temporario);
