@@ -26,7 +26,9 @@ import br.com.java.dao.ProdutoDAO;
 import br.com.java.model.Produtos;
 
 
-public class TelaCaixa extends javax.swing.JFrame{
+public class TelaCaixa extends JFrame{
+	
+	
 	
 	private static final long serialVersionUID = 1L;
 	protected static final int ERROR_MESSAGE = 0;
