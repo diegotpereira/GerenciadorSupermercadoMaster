@@ -19,7 +19,7 @@ public class ProdutoDAO {
 			String descricao = telaDescricao;
 			String medida = medidaTela;
 			String valor = valorTela;
-			File f = new File("C:\\Users\\T.I\\Desktop\\Cadastro");
+			File f = new File("C:\\Users\\USER\\Desktop\\Cadastro\\cadastro.txt");
 			f.mkdirs();
 			File cadastro = new File(caminho);
 			try {
@@ -60,8 +60,6 @@ public class ProdutoDAO {
 	}
 	public boolean localizar(String codigoProcurado, String caminho) {
 		
-		
-		
 		int aux = 0;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(caminho));
@@ -71,10 +69,10 @@ public class ProdutoDAO {
 				String produtos[] = linha.split("@");
 				if (produtos[3].endsWith(codigoProcurado)) {
 					String vetor[] = linha.split("@");
-					produtos.setDescricao(vetor[0]);
-					setMedida(vetor[1]);
-					setValor(vetor[2]);
-					setCodigo(vetor[3]);
+//					setDescricao(vetor[0]);
+//					setMedida(vetor[1]);
+//					setValor(vetor[2]);
+//					setCodigo(vetor[3]);
 					aux++;
 				}
 			}
@@ -90,20 +88,7 @@ public class ProdutoDAO {
 			return true;
 		}
 	}
-	private void setCodigo(String string) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	private void setValor(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void setMedida(String string) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public boolean alterar(String caminho, String codigoTela, String descricaoTela, String medidaTela,
 			String valorTela) {
@@ -168,6 +153,11 @@ public class ProdutoDAO {
 			e1.printStackTrace();
 		}
 		return aux;
+	}
+	public double subtotal(double sub, String valor, String quantidade) {
+		double totalLinha = Double.parseDouble(valor) * Double.parseDouble(quantidade);
+		sub += totalLinha;
+		return sub;
 	}
 
 }
