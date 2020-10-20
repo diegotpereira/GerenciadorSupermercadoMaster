@@ -103,7 +103,7 @@ public class TelaPagamento extends TelaCaixa{
 									limparTela();
 									p.exibirCupom(pagamento);
 									setVisible(false);
-									((view.TelaCaixa) TelaCaixa).limparPagamento();
+									((br.com.java.view.TelaCaixa) TelaCaixa).limparPagamento();
 									TelaCaixa.setVisible(true);
 								}
 							}
@@ -153,7 +153,7 @@ public class TelaPagamento extends TelaCaixa{
 									limparTela();
 									p.exibirCupom(pagamento);
 									setVisible(false);
-									((view.TelaCaixa) TelaCaixa).limparPagamento();
+									((br.com.java.view.TelaCaixa) TelaCaixa).limparPagamento();
 									TelaCaixa.setVisible(true);
 								}
 							}
@@ -167,7 +167,7 @@ public class TelaPagamento extends TelaCaixa{
 							limparTela();
 							p.exibirCupom(pagamento);
 							setVisible(false);
-							((view.TelaCaixa) TelaCaixa).limparPagamento();
+							((br.com.java.view.TelaCaixa) TelaCaixa).limparPagamento();
 							TelaCaixa.setVisible(true);
 						}
 						break;
