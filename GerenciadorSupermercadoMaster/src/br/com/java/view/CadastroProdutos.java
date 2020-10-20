@@ -48,6 +48,9 @@ public class CadastroProdutos extends TelaCaixa{
 		txtValor.setText("");
 	}
 
+	/**
+	 * @wbp.parser.constructor
+	 */
 	public CadastroProdutos(String caminho,JFrame TelaCaixa) {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setTitle("Cadastro Produtos");
