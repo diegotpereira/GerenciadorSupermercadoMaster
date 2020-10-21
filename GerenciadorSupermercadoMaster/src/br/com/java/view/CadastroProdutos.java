@@ -30,7 +30,7 @@ import br.com.java.model.Produtos;
 
 public class CadastroProdutos extends TelaCaixa{
 	
-	
+	Produtos p;
 	
 	private static final long serialVersionUID = 1L;
 	protected static final int ERROR_MESSAGE = 0;
@@ -249,12 +249,12 @@ public class CadastroProdutos extends TelaCaixa{
 				String codigoProcurado = JOptionPane.showInputDialog(null,
 						"Digite código do produto a ser localizado :");
 				ProdutoDAO l = new ProdutoDAO();
-				Produtos p = new Produtos();
+				//Produtos p = new Produtos();
 				if (l.localizar(codigoProcurado, caminho)) {
-					txtDescricao.setText(p.getDescricao());
-					txtCodigo.setText(p.getCodigo());
-					txtValor.setText(p.getValor());
-					cmbBox.setSelectedItem(p.getMedida());
+					txtDescricao.setText(l.getDescricao());
+					txtCodigo.setText(l.getCodigo());
+					txtValor.setText(l.getValor());
+					cmbBox.setSelectedItem(l.getMedida());
 				} else {
 					JOptionPane.showMessageDialog(null, "Produto não localizado!", null, ERROR_MESSAGE);
 				}
@@ -281,13 +281,13 @@ public class CadastroProdutos extends TelaCaixa{
 				} else {
 					String codigoProcurado = JOptionPane.showInputDialog(null,
 							"Digite código do produto a ser localizado :");
-					ProdutoDAO l = new ProdutoDAO();
-					Produtos p = new Produtos();
-					if (l.localizar(codigoProcurado, caminho)) {
-						txtDescricao.setText(p.getDescricao());
-						txtCodigo.setText(p.getCodigo());
-						txtValor.setText(p.getValor());
-						cmbBox.setSelectedItem(p.getMedida());
+					ProdutoDAO dao = new ProdutoDAO();
+					//Produtos p = new Produtos();
+					if (dao.localizar(codigoProcurado, caminho)) {
+						txtDescricao.setText(dao.getDescricao());
+						txtCodigo.setText(dao.getCodigo());
+						txtValor.setText(dao.getValor());
+						cmbBox.setSelectedItem(dao.getMedida());
 					} else {
 						JOptionPane.showMessageDialog(null, "Produto não localizado!", null, ERROR_MESSAGE);
 					}
@@ -352,7 +352,7 @@ public class CadastroProdutos extends TelaCaixa{
 		panel.add(btnLimpar);
 	}
 
-	public CadastroProdutos(ArrayList<Produtos> lista) {
+	public CadastroProdutos() {
 		// TODO Auto-generated constructor stub
 	}
 }
