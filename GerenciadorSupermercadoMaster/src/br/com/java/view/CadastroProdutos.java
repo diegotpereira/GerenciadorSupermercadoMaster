@@ -22,7 +22,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 import br.com.java.dao.ProdutoDAO;
 import br.com.java.model.Pagamento;
-import br.com.java.model.Produtos;
+
 
 
 
@@ -30,7 +30,7 @@ import br.com.java.model.Produtos;
 
 public class CadastroProdutos extends TelaCaixa{
 	
-	Produtos p;
+	
 	
 	private static final long serialVersionUID = 1L;
 	protected static final int ERROR_MESSAGE = 0;

@@ -8,9 +8,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import br.com.java.model.Produtos;
 
-public class ProdutoDAO extends Produtos{
+
+public class ProdutoDAO {
 	
 	private String codigo;
 	private String descricao;

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import br.com.java.model.Produtos;
+import br.com.java.dao.ProdutoDAO;
 import br.com.java.model.Usuario;
 import br.com.java.model.UsuarioAdmin;
 import br.com.java.model.UsuarioComum;
@@ -16,7 +16,7 @@ public class Login extends javax.swing.JFrame {
 	 private ArrayList<Usuario> contasComuns = new ArrayList<>();
      private ArrayList<Usuario> contasAdmin = new ArrayList<>();
      private ArrayList<Usuario> contas = new ArrayList<>();
-     private ArrayList<Produtos> lista = new ArrayList<>();
+     private ArrayList<ProdutoDAO> lista = new ArrayList<>();
 	
 	
 	

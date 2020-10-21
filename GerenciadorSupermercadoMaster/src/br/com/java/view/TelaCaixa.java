@@ -23,7 +23,7 @@ import javax.swing.border.EmptyBorder;
 
 import br.com.java.dao.PagamentoDAO;
 import br.com.java.dao.ProdutoDAO;
-import br.com.java.model.Produtos;
+
 
 
 public class TelaCaixa extends JFrame{
