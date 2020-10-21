@@ -152,12 +152,12 @@ public class TelaCaixa extends JFrame{
 			public void keyReleased(KeyEvent e) {
 				if (txtCodigo.getText().length() >= 3) {
 					ProdutoDAO l = new ProdutoDAO();
-					Produtos p = new Produtos();
+					//Produtos p = new Produtos();
 					if (l.localizar(txtCodigo.getText(), caminho)) {
-						txtDescricao.setText(p.getDescricao());
-						txtCodigo.setText(p.getCodigo());
-						txtValor.setText(p.getValor());
-						txtMedida.setText(p.getMedida());
+						txtDescricao.setText(l.getDescricao());
+						txtCodigo.setText(l.getCodigo());
+						txtValor.setText(l.getValor());
+						txtMedida.setText(l.getMedida());
 					}
 				}
 			}
@@ -179,13 +179,13 @@ public class TelaCaixa extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 // ***************************************************
 				if (!txtCodigo.getText().isEmpty()) {
-					ProdutoDAO l = new ProdutoDAO();
-					Produtos p = new Produtos();
-					if (l.localizar(txtCodigo.getText(), caminho)) {
-						txtDescricao.setText(p.getDescricao());
-						txtCodigo.setText(p.getCodigo());
-						txtValor.setText(p.getValor());
-						txtMedida.setText(p.getMedida());
+					ProdutoDAO dao = new ProdutoDAO();
+					//Produtos p = new Produtos();
+					if (dao.localizar(txtCodigo.getText(), caminho)) {
+						txtDescricao.setText(dao.getDescricao());
+						txtCodigo.setText(dao.getCodigo());
+						txtValor.setText(dao.getValor());
+						txtMedida.setText(dao.getMedida());
 					} else {
 						JOptionPane.showMessageDialog(null, "Produto não localizado!", null, ERROR_MESSAGE);
 						limparTela();
