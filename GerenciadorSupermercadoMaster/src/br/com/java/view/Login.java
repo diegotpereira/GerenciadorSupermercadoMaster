@@ -23,7 +23,7 @@ public class Login extends javax.swing.JFrame {
 	public Login() {
 		
 		inicializarComponente();
-		UsuarioAdmin ad1 = new UsuarioAdmin("Christopher", "123456789");
+		UsuarioAdmin ad1 = new UsuarioAdmin("admin", "123");
         UsuarioAdmin ad2 = new UsuarioAdmin("Prof", "1234");
         UsuarioComum c1 = new UsuarioComum("cliente", "963");
         UsuarioComum c2 = new UsuarioComum("aluno", "741");
@@ -149,7 +149,7 @@ public class Login extends javax.swing.JFrame {
             }
                 for(int z = 0;z < contasAdmin.size();z++){
                  if((contasAdmin.get(z).nome.equals(nome)==true) && (contasAdmin.get(z).cpf.equals(cpf))){
-                     CadastroProdutos cp = new CadastroProdutos(lista);
+                     CadastroProdutos cp = new CadastroProdutos();
                      limparCampos();
                      cp.setVisible(true);
                      condicao = 0;
